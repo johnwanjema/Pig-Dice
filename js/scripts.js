@@ -8,8 +8,11 @@ function roll2() {
 }
 
 
-$(document).ready(function() {
-    
-    prompt("input name of first player")
-    prompt("input name of first player")
+$(document).ready(function() {    
+   var player1 = prompt("input name of first player")
+   var player2 = prompt("input name of second player")
+   document.getElementById("player1").innerHTML =
+   "Hello " + player1 + "! How are you today?";
+   document.getElementById("player2").innerHTML =
+   "Hello " + player2 + "! How are you today?";
 });

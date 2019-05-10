@@ -6,3 +6,10 @@ function roll2() {
     var x = document.getElementById("roll2")
     x.innerHTML = Math.floor((Math.random() * 6) + 1);
 }
+
+
+$(document).ready(function() {
+    
+    prompt("input name of first player")
+    prompt("input name of first player")
+});

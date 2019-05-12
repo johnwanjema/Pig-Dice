@@ -13,3 +13,10 @@ You can also clone it  and add changes}
 
 ## Technologies Used
 { created my website using HTML CSS JavaScript and bootstrap.}
+
+
+## Support and contact details
+{contact me through jonwanjema@gmail.com 
+phone number:0721273839 for inquries and contributions.}
+
+### License

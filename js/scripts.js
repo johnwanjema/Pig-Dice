@@ -13,18 +13,18 @@ function Turn(player) {
 //Creates random number, saves it and then returns it
 Turn.prototype.diceRoller = function (player1, player2) {
   var randNumber = Math.floor(Math.random() * 6) + 1;
-  this.total += randNumber;
+  
 
 
   if (randNumber == 1) {
     this.total = 0;
-
+    this.player.score = 0;
     this.hold(player1, player2);
-    // this.randNumber += randNumber;
+
     return randNumber;
   } else {
 
-
+    this.total += randNumber;
     return randNumber;
 
   };
@@ -32,7 +32,8 @@ Turn.prototype.diceRoller = function (player1, player2) {
 
 Turn.prototype.hold = function (player1, player2) {
   //adding total to score
-  this.player.score += Turn.total;
+  this.player.score += this.total;
+  
   //and clearing total
   this.total = 0;
   this.randNumber = 0;
@@ -66,7 +67,7 @@ $(document).ready(function () {
   $("#roll").click(function () {
     $("#roll2").text(playing.diceRoller());
     $("#total2").text(playing.total);
-    $('#t1').text(playing.score);
+
 
 
   });
@@ -79,26 +80,46 @@ $(document).ready(function () {
 
   $("#player1").text(player1.userName);
   $("#player2").text(player2.userName);
-  $("#t1").text(player1.score);
+
+
+
+  
 
 
   $("#hold").click(function (event) {
     event.preventDefault();
-    alert("qwerty")
+
     playing.hold(player1, player2);
 
     //Prints current Player
-    $('#current_player').text(playing.player.userName);
+    $("player1").text(playing.player.userName);
 
     //Prints players scores
-    $("t1").text(player1.score);
-    $('#player2-score').text(player2.score);
+    
+    $('#t1').text(player1.score);
 
     //Prints the cleared Current Roll and Turn Total on page
-    $('#roll').text(playing.randNumber);
-    $('#roll-total').text(playing.total);
+    $("#roll1").text(playing.randNumber);
+    $("#total1").text(playing.total);
   });
 
+
+  $("#hold2").click(function (event) {
+    event.preventDefault();
+
+    playing.hold(player1, player2);
+
+    //Prints current Player
+    $("player1").text(playing.player.userName);
+
+    //Prints players scores
+    
+    $('#t2').text(player1.score);
+
+    //Prints the cleared Current Roll and Turn Total on page
+    $("#roll2").text(playing.randNumber);
+    $("#total2").text(playing.total);
+  });
 
 
 

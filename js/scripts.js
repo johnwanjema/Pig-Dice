@@ -3,7 +3,6 @@ function Player(userName) {
   this.score = 0;
 };
 
-//pass it a player object!
 function Turn(player) {
   this.total = 0;
   this.randNumber = 0;
@@ -13,7 +12,7 @@ function Turn(player) {
 //Creates random number, saves it and then returns it
 Turn.prototype.diceRoller = function (player1, player2) {
   var randNumber = Math.floor(Math.random() * 6) + 1;
-  
+
 
 
   if (randNumber == 1) {
@@ -33,19 +32,11 @@ Turn.prototype.diceRoller = function (player1, player2) {
 Turn.prototype.hold = function (player1, player2) {
   //adding total to score
   this.player.score += this.total;
-  
+
   //and clearing total
   this.total = 0;
   this.randNumber = 0;
-  // if (this.player == player1) {
-  //   this.player = player2;
-  //   $("#player2").toggleClass("active");
-  //   $("#player1").toggleClass("active");
-  // } else if (this.player == player2) {
-  //   this.player = player1;
-  //   $("#player2").toggleClass("active");
-  //   $("#player1").toggleClass("active");
-  // };
+ 
 };
 
 
@@ -67,7 +58,11 @@ $(document).ready(function () {
   $("#roll").click(function () {
     $("#roll2").text(playing.diceRoller());
     $("#total2").text(playing.total);
-
+    if ((player1.total) >= 100) {
+      alert("You are the winner!");
+    } else if (player2.total >= 100) {
+      alert("You are the winner!");
+    };
 
 
   });
@@ -83,7 +78,7 @@ $(document).ready(function () {
 
 
 
-  
+
 
 
   $("#hold").click(function (event) {
@@ -95,12 +90,15 @@ $(document).ready(function () {
     $("player1").text(playing.player.userName);
 
     //Prints players scores
-    
+
     $('#t1').text(player1.score);
 
     //Prints the cleared Current Roll and Turn Total on page
     $("#roll1").text(playing.randNumber);
     $("#total1").text(playing.total);
+
+
+    
   });
 
 
@@ -113,15 +111,24 @@ $(document).ready(function () {
     $("player1").text(playing.player.userName);
 
     //Prints players scores
-    
+
     $('#t2').text(player1.score);
 
     //Prints the cleared Current Roll and Turn Total on page
     $("#roll2").text(playing.randNumber);
     $("#total2").text(playing.total);
+
+    if ((player1.score) >= 100) {
+    alert("You are the winner!");
+  } else if (player2.score >= 10) {
+    alert("You are the winner!");
+  };
   });
 
+  
 
+
+   
 
 });
 

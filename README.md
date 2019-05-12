@@ -6,3 +6,10 @@
 ## Description
 {This is a website is for a pigdice game which consists of two players. 
 one player rolls the dice and roll added cumulatively. If a player rolls one all points are lost and its the next players turn. A palyer has an option o holding which changes turns }
+
+## Setup/Installation Requirements
+{All you require to acess my website is web browser and the link **(johnwanjema.github.io/pigdice) 
+You can also clone it  and add changes}
+
+## Technologies Used
+{ created my website using HTML CSS JavaScript and bootstrap.}

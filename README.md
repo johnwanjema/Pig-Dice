@@ -31,4 +31,4 @@ phone number:0721273839 for inquries and contributions.}
 ### License
 This project is licensed under the MIT License - see the LICENSE file for details'
 
- [https://github.com/johnwanjema/delanistudio/blob/master/LICENSE]
+ [https://github.com/johnwanjema/pigdice/tree/add-license-1]

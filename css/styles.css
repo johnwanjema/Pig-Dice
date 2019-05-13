@@ -7,17 +7,27 @@ padding-right: 50px;
 padding: 10px;
 
 }
-
+body{
+    background-color: rgba(0, 60, 255, 0.705);
+    background-image: url(../image/pi.jpg);
+    background-size:contain;
+    color: white;
+}
+h1{
+    text-align: center;
+}
 body{
     
     background-size: cover;
     font-weight: bolder;    
     padding-top: 85px;
 }
-
-
+.container{
+    
+    padding-left: 300px;
+}
 button {
-    background-color:rgb(0, 60, 255);
+    background-color:rgb(114, 231, 4);
     border: none;
     color: white;
     padding: 15px 32px;

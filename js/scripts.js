@@ -16,7 +16,7 @@ turn.prototype.diceRoller = function (player1, player2) {
   if (randNumber == 1) {
     this.total = 0;
     this.player.score = 0;
-    this.hold(player1, player2);
+    this.hold(player1,player2);
     alert("next players turn");
     return randNumber;
   } else {

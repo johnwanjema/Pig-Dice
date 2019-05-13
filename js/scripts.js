@@ -12,36 +12,25 @@ function Turn(player) {
 //Creates random number, saves it and then returns it
 Turn.prototype.diceRoller = function (player1, player2) {
   var randNumber = Math.floor(Math.random() * 6) + 1;
-
-
-
   if (randNumber == 1) {
     this.total = 0;
     this.player.score = 0;
     this.hold(player1, player2);
-
     return randNumber;
   } else {
-
     this.total += randNumber;
     return randNumber;
-
   };
 };
 
-Turn.prototype.hold = function (player1, player2) {
+Turn.prototype.hold = function () {
   //adding total to score
   this.player.score += this.total;
-
   //and clearing total
   this.total = 0;
   this.randNumber = 0;
- 
+
 };
-
-
-
-
 
 
 
@@ -58,11 +47,8 @@ $(document).ready(function () {
   $("#roll").click(function () {
     $("#roll2").text(playing.diceRoller());
     $("#total2").text(playing.total);
-    if ((player1.total) >= 100) {
-      alert("You are the winner!");
-    } else if (player2.total >= 100) {
-      alert("You are the winner!");
-    };
+
+
 
 
   });
@@ -71,7 +57,7 @@ $(document).ready(function () {
   var player2 = new Player(prompt("input name"));
 
   var playing = new Turn(player1);
-
+  var playing = new Turn(player2);
 
   $("#player1").text(player1.userName);
   $("#player2").text(player2.userName);
@@ -84,10 +70,8 @@ $(document).ready(function () {
   $("#hold").click(function (event) {
     event.preventDefault();
 
-    playing.hold(player1, player2);
+    playing.hold(player1);
 
-    //Prints current Player
-    $("player1").text(playing.player.userName);
 
     //Prints players scores
 
@@ -98,37 +82,32 @@ $(document).ready(function () {
     $("#total1").text(playing.total);
 
 
-    
+
   });
 
 
   $("#hold2").click(function (event) {
     event.preventDefault();
 
-    playing.hold(player1, player2);
+    playing.hold(player2);
 
-    //Prints current Player
-    $("player1").text(playing.player.userName);
+
 
     //Prints players scores
 
-    $('#t2').text(player1.score);
+    $('#t2').text(player2.score);
 
     //Prints the cleared Current Roll and Turn Total on page
     $("#roll2").text(playing.randNumber);
     $("#total2").text(playing.total);
 
-    if ((player1.score) >= 100) {
-    alert("You are the winner!");
-  } else if (player2.score >= 10) {
-    alert("You are the winner!");
-  };
+   
   });
 
-  
 
 
-   
+
+
 
 });
 

@@ -99,23 +99,7 @@ $(document).ready(function () {
   });
 
 
-  // $("#hold2").click(function (event) {
-  //   event.preventDefault();
-
-  //   playing.hold(player1,player2);
-
-
-
-  //   //Prints players scores
-
-  //   $('#t2').text(player2.score);
-
-  //   //Prints the cleared Current Roll and Turn Total on page
-  //   $("#roll2").text(playing.randNumber);
-  //   $("#total2").text(playing.total);
-
-   
-  // });
+  
 
 
 

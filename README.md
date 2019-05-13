@@ -12,7 +12,7 @@ one player rolls the dice and roll added cumulatively. If a player rolls one all
 You can also clone it  and add changes.}
 
 
-##GAME INSTRUCTIONS
+## GAME INSTRUCTIONS
 {Each turn, a player repeatedly rolls a die until either a 1 is rolled or the player decides to "hold":
 
 If the player rolls a 1, they score nothing and it becomes the next player's turn.
@@ -29,3 +29,6 @@ For example, the first player, Anne, begins a turn with a roll of 5. Anne could 
 phone number:0721273839 for inquries and contributions.}
 
 ### License
+This project is licensed under the MIT License - see the LICENSE file for details'
+
+ [https://github.com/johnwanjema/delanistudio/blob/master/LICENSE]
